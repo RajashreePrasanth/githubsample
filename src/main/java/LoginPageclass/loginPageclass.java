@@ -27,7 +27,7 @@ public class loginPageclass extends testBase{
 		return flag;
 	}
 	
-	public   String getTitle() {
+	public   String getTitleLoginPage() {
 		String pageclaseTitle=driver.getTitle();
 		System.out.println("pageclaseTitle" + pageclaseTitle); 
 		return pageclaseTitle;
