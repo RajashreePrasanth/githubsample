@@ -15,31 +15,33 @@ public class driverfactory {
 	WebDriver driver;
 	Properties prop;
 	
-	public WebDriver initBrowser(String browserName) {
-		//String browserName=prop.getProperty("browser");
-		//System.out.println("browserName" +browserName);
-		if (browserName.contains("chrome")) {
+	public WebDriver initBrowser() {
+		String browser=prop.getProperty("browser");
+		System.out.println("browserName" +browser);
+		
+		if (browser.contains("chrome")) {
 			 driver=new ChromeDriver();
 		}
-		else if(browserName.contains("firefox")) {
+		else if(browser.contains("firefox")) {
 			 driver=new FirefoxDriver();
 			}
-		else if(browserName.contains("edge")) {
+		else if(browser.contains("edge")) {
 			 driver=new EdgeDriver();
 			}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		
 		System.setProperty("webdriver.chrome.driver","C:/driverlatest May2023/chromedriver_win32 (7)/chromedriver.exe");
-		 driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
-		 //String URL=prop.getProperty("url");
+		
+		 String URL=prop.getProperty("url");
+		 
+		 driver.get(URL);
 		return driver;
 	}
-	
 	public Properties initprop()  {
 		try {
 		prop= new Properties();
-		FileInputStream ip= new FileInputStream("C:/Users/gp07f/SeleniumAssignment/july2023/src/test/resources/config.txt");
+		FileInputStream ip= new FileInputStream("C:/Users/gp07f/SeleniumAssignment/july2023/src/test/resources/config.properties");
 		prop.load(ip);
 			}
 		catch (FileNotFoundException e) {

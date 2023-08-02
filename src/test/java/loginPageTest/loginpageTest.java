@@ -15,7 +15,7 @@ public class loginpageTest extends testBase{
 	
 	@Test
 	public void getTitleTest() {
-		String act_title=loginpage.getTitle();
+		String act_title=loginpage.getTitleLoginPage();
 		Assert.assertEquals(act_title, "Account Login");
 		System.out.println("Test passed");
 		

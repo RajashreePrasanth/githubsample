@@ -22,7 +22,7 @@ public class testBase {
 	public void setup() {
 		df=new driverfactory();
 		prop =df.initprop();
-		driver= df.initBrowser("chrome");
+		driver= df.initBrowser();
 		loginpage =new loginPageclass(driver);
 	}
 	
